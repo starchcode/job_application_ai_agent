@@ -1,0 +1,19 @@
+# Personal and sensitive data
+reference_files/
+output/
+MEMORY.md
+additional_information/
+
+# Local Claude Code settings
+.claude/settings.local.json
+
+# LaTeX build files
+*.aux
+*.log
+*.out
+*.synctex.gz
+*.fls
+*.fdb_latexmk
+
+# macOS
+.DS_Store
