@@ -8,7 +8,7 @@ Read this file first, every time you work in this folder.
 - Read everything in `rules/` and `additional_information/` before doing a job. Those files are my rules and must be followed.
 
 ## Who I am
-I'm a job seeker who wants you to apply on my behalf by tailoring my CV and cover letter to each role.
+I'm a job seeker. I apply to jobs myself. You tailor my CV and cover letter to each role and prepare the files. Never apply, submit or send anything for me.
 My personal details and personal rules are in `additional_information/`. Keep private data there, never in this file. My CV and other files are in `reference_files/`. Together these are the source of truth about me.
 
 ## The agent's job
