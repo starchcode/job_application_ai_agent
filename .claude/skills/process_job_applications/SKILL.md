@@ -47,7 +47,9 @@ The number lets me refer to or skip jobs. Then go through jobs one at a time. Al
 **Every marked change** gets a table giving the reason for it.
 
 ## 4. Producing files
-- Copy the `.tex` templates from `reference_files/` to a temp or scratch location. Edit and compile there. Never edit `reference_files/`.
+- Copy the `.tex` templates from `reference_files/` and the project `fonts/` folder into a temp or scratch folder. Edit and compile there. Never edit `reference_files/`.
+- Compile with Tectonic (`tectonic file.tex`), which uses the XeTeX engine the templates were made for. Tectonic cannot find Montserrat italics under the name `montserrat`, so in the temp copy only: copy `fonts/montserrat-*.ttf` to `fonts/mont-*.ttf` and replace `{montserrat}[` with `{mont}[` in the `.tex`. This does not change the look.
+- After compiling, confirm the CV is exactly one page and the cover letter fits one page.
 - Put only the finished PDFs in today's `output/YYYYMMDD/` folder, named as in `rules/cv_and_cover_letter.md`. No `.tex` files in `output/`.
 - Before showing me a file: check it follows `rules/cv_and_cover_letter.md` and `MEMORY.md`.
 
