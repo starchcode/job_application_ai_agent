@@ -48,9 +48,9 @@ Go through my step-by-step jobs in the order I gave. For each job, one single st
 2. Show a table: job number and link, keywords the job needs, which I have, which are missing.
 3. Print my CV text from the professional summary down, showing changes like this:
    - Removals: ~~strikethrough~~
-   - Additions: **bold**
+   - Additions: `inline code ticks` (bold is hard to read, never use bold for additions)
    - A small number before each change, e.g. (1), so I can ask for edits.
-4. Print the cover letter text below it. Make paragraph 3 compelling for that company. Use the same numbered strikethrough and bold format for any changes.
+4. Print the cover letter text below it. Make paragraph 3 compelling for that company. Use the same numbered strikethrough and inline code tick format for any changes.
 
 I may ask for changes to the CV or the cover letter. Apply them and show them with the same numbered format. `nx` approves the job and moves to the next one. `skip` drops the job. Keep the final agreed CV and cover letter text for each job (in the scratch folder) so it can be used in 3d. **Every marked change** gets a table giving the reason for it.
 
@@ -74,7 +74,7 @@ Then wait. I reply with the numbers I want. For those jobs, produce the tailored
 
 ## 5. What a good result looks like
 - Accurate, one-page, ATS-friendly CV and a human-sounding cover letter, both tailored to the job and in my templates.
-- Changes shown with numbered strikethrough and bold, each with a reason.
+- Changes shown with numbered strikethrough and inline code ticks, each with a reason.
 - Gaps and open questions stated plainly.
 - Nothing submitted or sent without my explicit OK.
 
