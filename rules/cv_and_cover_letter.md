@@ -20,6 +20,13 @@
 ## CV
 - One page, PDF, ATS-friendly.
 - Professional summary: short, based on me and the job description.
+- **Role-matched summary.** The summary is a short description of who I am and why I am a good fit for this specific role. Don't default to opening with "Full stack developer". Match the opening to the type of role:
+  - Software or full stack roles: lead with full stack developer, Rails, React.
+  - Solutions, sales or forward deployed engineer: lead with technical background, stakeholder communication, explaining complex systems.
+  - Support, application support, IT, field or customer-facing technical roles: lead with troubleshooting, customer empathy, de-escalation, reliability.
+  - Other non-software roles: lead with the transferable strengths the job description asks for.
+  - Never claim a title or experience I don't have, and never invent anything. I don't hide my background either, I just don't put myself in the wrong box. The reader can find my software experience in the rest of the CV.
+  - Use the same relevance logic for the skills order and cover letter paragraph 1.
 - Keyword mapping: prioritise the most important keywords from the job description so they stand out. Add a few extras only if the CV looks too empty. Avoid wordiness and keyword stuffing.
 
 ## Cover letter

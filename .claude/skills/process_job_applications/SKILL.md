@@ -25,13 +25,14 @@ Usage: I call `/apply` and upload the job `.json` file in the chat (no path is g
 ### 3a. Fit table
 Compare each job with my skills and CV. Show one table of all jobs, sorted strongest to weakest fit, with emojis, concise:
 
-| # | Job title (link) | Skill required | You | Fit |
-|---|---|---|---|---|
+| # | Job title (link) | Applied? | Skill required | You | Fit |
+|---|---|---|---|---|---|
 
 - **One row per job.** Each job is its own row.
 - **Numbering:** number the rows 1, 2, 3 ... in table order (strongest fit first). Never use the job's position or id in the JSON file.
 - **Link:** the job title is a clickable link to the job's URL from the JSON.
 - The number lets me refer to jobs.
+- **Applied-before flag:** run the "Previously applied check" in `rules/job_json_parser.md` against every folder in `output/`, of any date, not just the most recent one. Add a first-table column `Applied?`. For a job already applied to, show `⚠️ Applied before (YYYYMMDD)` and name the matching file(s) (CV and/or cover letter). For an uncertain match show `❓ Possible match (YYYYMMDD)`. Otherwise leave it `🆕`. Still rank flagged jobs by fit and never drop them; I decide whether to redo them.
 
 Then **stop and wait**. Do not start any job or produce any file.
 
