@@ -3,7 +3,7 @@
 A Claude Code agent that tailors your CV and cover letter to each job, using your own reference files. You review and approve every change. It never applies, submits or sends anything for you.
 
 ## How it works
-1. You give it a JSON file of jobs.
+1. You give it a JSON file of jobs. If your jobs are saved on LinkedIn, `/extract-linkedin-jobs` can build that file for you.
 2. It ranks the jobs against your CV and shows a numbered table.
 3. You choose which jobs to review step by step, and which to batch.
 4. For each job it suggests changes to your CV and a cover letter. You approve or edit them.
@@ -14,7 +14,8 @@ Everything it writes about you comes from your files. It will not invent skills,
 ## Set up (once)
 1. Install [Claude Code](https://claude.com/claude-code) and open this folder in it.
 2. Install a LaTeX engine. On macOS: `brew install tectonic`.
-3. Add the folders and files below. They are git-ignored because they hold personal data, so after cloning you create them yourself.
+3. Optional, only for `/extract-linkedin-jobs`: install the Claude in Chrome extension and sign in to LinkedIn in Chrome.
+4. Add the folders and files below. They are git-ignored because they hold personal data, so after cloning you create them yourself.
 
 ### Files you need to add
 
@@ -30,8 +31,17 @@ Your `.tex` files must compile with XeLaTeX (they use `fontspec`) and load fonts
 
 `output/` is created automatically.
 
+## Get your jobs from LinkedIn (optional)
+Skip this if you already have a jobs `.json` file.
+1. In Chrome, open your LinkedIn job tracker: `https://www.linkedin.com/jobs-tracker/`.
+2. In Claude Code, type `/extract-linkedin-jobs`. By default it exports the **Saved** tab. Name another tab (In Progress, Applied, Archived) if you want it; the agent asks before doing a large one such as Applied.
+3. The agent goes through every page of the tab and opens each job in a separate Chrome tab. Your tracker tab stays open and untouched, and nothing on LinkedIn is changed. If LinkedIn asks you to sign in, do it yourself.
+4. It saves `output/YYYYMMDD/linkedin_<tab>_jobs.json` (for example `linkedin_saved_jobs.json`). Each job has `company_name`, `job_title`, `url`, `job_location`, `job_requirements`, `other_description` and `employment_type`.
+5. Job descriptions are condensed and reworded, not copied word for word. Check the original posting for anything important such as salary or eligibility.
+6. Upload that file with `/apply` (see below).
+
 ## Use it
-1. Get your jobs into a `.json` file. Each job should have at least a title, company, link and description.
+1. Get your jobs into a `.json` file (from `/extract-linkedin-jobs` or your own). Each job should have at least a title, company, link and description.
 2. In Claude Code, type `/apply` and attach the JSON file to the message.
 3. The agent saves the JSON in `output/YYYYMMDD/` (today's date) and shows a table of all jobs, strongest fit first, numbered 1, 2, 3 and so on.
 4. Reply with the numbers you want, for example:
@@ -59,11 +69,12 @@ Your `.tex` files must compile with XeLaTeX (they use `fontspec`) and load fonts
 CLAUDE.md                      Agent instructions (always read first)
 MEMORY.md                      Lessons from your feedback (git-ignored)
 .claude/skills/process_job_applications/SKILL.md   The /apply workflow
+.claude/skills/extract-linkedin-jobs/SKILL.md      The /extract-linkedin-jobs workflow
 rules/                         Rules for parsing jobs and writing the CV and cover letter
 additional_information/        Your private facts and personal rules (git-ignored)
 reference_files/               Your CV, cover letter template, certificates (git-ignored, read-only)
 fonts/                         Fonts used by the templates
-output/YYYYMMDD/               JSON and PDFs for that day (git-ignored)
+output/YYYYMMDD/               Job JSON (uploaded or extracted from LinkedIn) and PDFs for that day (git-ignored)
 output/YYYYMMDD/batch/         PDFs for batch jobs
 ```
 
