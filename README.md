@@ -8,6 +8,7 @@ A Claude Code agent that tailors your CV and cover letter to each job, using you
 3. You choose which jobs to review step by step, and which to batch.
 4. For each job it suggests changes to your CV and a cover letter. You approve or edit them.
 5. It compiles the final PDFs into a dated folder in `output/`.
+6. Optional: it can also open each job in Chrome and fill the application forms for you, upload the CV and stop before the final Submit. You always click Submit yourself.
 
 Everything it writes about you comes from your files. It will not invent skills, experience or facts. If a job needs something you don't have, it tells you instead.
 
@@ -42,7 +43,7 @@ Skip this if you already have a jobs `.json` file.
 
 ## Use it
 1. Get your jobs into a `.json` file (from `/extract-linkedin-jobs` or your own). Each job should have at least a title, company, link and description.
-2. In Claude Code, type `/apply` and attach the JSON file to the message.
+2. In Claude Code, type `/apply` and attach the JSON file to the message. The agent first asks whether to work **with filling forms** (Chrome) or **without**.
 3. The agent saves the JSON in `output/YYYYMMDD/` (today's date) and shows a table of all jobs, strongest fit first, numbered 1, 2, 3 and so on.
 4. Reply with the numbers you want, for example:
    ```
@@ -57,6 +58,9 @@ Skip this if you already have a jobs `.json` file.
 7. **Batch jobs:** the agent shows a table of your batch jobs. Reply with the numbers you want and it produces their PDFs in `output/YYYYMMDD/batch/` without step by step review.
 8. Apply to the jobs yourself using the PDFs.
 
+### With filling forms (optional mode)
+Needs the Claude in Chrome extension. After you pick the jobs, the agent opens each step-by-step job in Chrome, one LinkedIn tab followed by the tab its Apply button opens, and goes on until it reaches the real form (Easy Apply jobs stay in LinkedIn). You review the CV and cover letter text as usual. When the files are made the agent asks for your consent, then fills the forms, uploads the tailored CV and cover letter where a form has a field for it, and asks you questions it can't answer from your files. It stops before the final Submit and gives a short status summary for every job. You finish any leftovers, submit and close the tabs. Only then does it show the batch jobs table and open those jobs the same way, so you can pick which to prepare. If a site needs an account, the agent stops and you sign up yourself. The details are in `rules/form_filling.md`. Standing answers (address, citizenship, salary wording and so on) are kept in your private `additional_information/about_me.md`.
+
 ## Rules for the CV and cover letter
 - Only facts from your reference files and `additional_information/` are used. Nothing is invented.
 - The CV layout does not change and stays on one page. Keywords from the job description are used where they truthfully fit.
@@ -70,7 +74,7 @@ CLAUDE.md                      Agent instructions (always read first)
 MEMORY.md                      Lessons from your feedback (git-ignored)
 .claude/skills/process_job_applications/SKILL.md   The /apply workflow
 .claude/skills/extract-linkedin-jobs/SKILL.md      The /extract-linkedin-jobs workflow
-rules/                         Rules for parsing jobs and writing the CV and cover letter
+rules/                         Rules for parsing jobs, writing the CV and cover letter, and filling forms in Chrome
 additional_information/        Your private facts and personal rules (git-ignored)
 reference_files/               Your CV, cover letter template, certificates (git-ignored, read-only)
 fonts/                         Fonts used by the templates

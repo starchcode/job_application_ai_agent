@@ -6,6 +6,7 @@ Read this file first, every time you work in this folder.
 - **Read MEMORY.md before every job.**
 - **Use the skill for this job:** `/apply` (`.claude/skills/process_job_applications/SKILL.md`).
 - Read everything in `rules/` and `additional_information/` before doing a job. Those files are my rules and must be followed.
+- When I call `/apply`, first ask: "With filling forms, or without?" The "with" mode uses Chrome and `rules/form_filling.md`. Never submit an application in either mode.
 
 ## Who I am
 I'm a job seeker. I apply to jobs myself. You tailor my CV and cover letter to each role and prepare the files. Never apply, submit or send anything for me.
@@ -23,6 +24,7 @@ Output: tailored CV and cover letter PDFs, built from my `.tex` templates.
 - `rules/`: my detailed rules. Use everything in here when I ask you to do things.
   - `job_json_parser.md`: how to parse the job JSON.
   - `cv_and_cover_letter.md`: CV and cover letter rules and file names.
+  - `form_filling.md`: how to open jobs and fill application forms in Chrome (never submit).
 - `additional_information/`: my private personal rules (`personal_rules.md`) and facts about me (`about_me.md`). Git-ignored. Read everything in here every job, with `rules/`.
 - `additional_information/about_me.md`: private facts about me not in my CV. Git-ignored. Read it every job. **You may edit this file**: when I tell you a new fact, add it, organised and in clean English.
 - `reference_files/`: **READ-ONLY.** My CV and cover letter `.tex` templates, certificates, examples. Never modify, rename, move or delete anything here.
@@ -37,7 +39,7 @@ Output: tailored CV and cover letter PDFs, built from my `.tex` templates.
 
 ## Ask me first before
 - Submitting any application or sending any email/message on my behalf.
-- Entering my personal data into any web form, or creating accounts.
+- Entering my personal data into any web form, or creating accounts. (In "with filling forms" mode my consent to fill is asked once, after the files are made. Never create accounts: tell me and I sign up.)
 - Claiming any skill, experience or fact not in my reference files.
 - Anything unclear in a job posting that changes how I should apply (e.g. visa, location, salary).
 - Overwriting or deleting any file in `output/`.
