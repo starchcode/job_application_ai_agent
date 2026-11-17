@@ -5,7 +5,7 @@ description: Process job applications from an uploaded job JSON file. Parses the
 
 # /apply: process job applications
 
-Usage: I call `/apply` and upload the job `.json` file in the chat (no path is given).
+Usage: I call `/apply`. The job `.json` is either already in today's `output/YYYYMMDD/` folder, or I upload it in the chat (no path is given). Check the folder first; only if no `.json` is there and none is uploaded, tell me it isn't uploaded.
 
 ## 0. Ask the mode first
 Before doing anything else, ask me one short question: **"With filling forms, or without?"**
@@ -20,7 +20,7 @@ Before doing anything else, ask me one short question: **"With filling forms, or
 
 ## 2. Set up
 1. Create `output/YYYYMMDD/` for today. If it exists, reuse it. Never duplicate or overwrite it.
-2. Save the uploaded JSON inside it. Don't overwrite a same-named file there; ask me or add a numbered suffix.
+2. Look for a `.json` already in today's folder. If there is one, use it (if several, ask which). Otherwise, if I uploaded one, save it inside. If neither exists, tell me the JSON isn't uploaded and wait. Don't overwrite a same-named file there; ask me or add a numbered suffix.
 3. Parse the jobs as described in `rules/job_json_parser.md`.
 
 ## 3. Workflow
