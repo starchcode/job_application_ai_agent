@@ -6,6 +6,7 @@ Read this file first, every time you work in this folder.
 - **Read MEMORY.md before every job.**
 - **Use the skill for this job:** `/apply` (`.claude/skills/process_job_applications/SKILL.md`).
 - Read everything in `rules/` and `additional_information/` before doing a job. Those files are my rules and must be followed.
+- **One chapter per response.** In the Claude desktop app, call `mcp__ccd_session__mark_chapter` once for every response, early, with a short title for what that response covers. This applies to every skill and every task in this folder. It overrides the usual advice to use chapters sparingly. I navigate long sessions with the chapter list.
 - When I call `/apply`, first ask: "With filling forms, or without?" The "with" mode uses Chrome and `rules/form_filling.md`. Never submit an application in either mode.
 
 ## Who I am
